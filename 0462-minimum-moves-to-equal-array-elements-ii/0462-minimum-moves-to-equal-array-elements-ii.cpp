@@ -1,10 +1,10 @@
 class Solution {
 public:
     int minMoves2(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
         int n=nums.size();
+        nth_element(nums.begin(), nums.begin() + n / 2, nums.end());
         int mid=nums[n/2];
-        int count=0;
+        long long count=0;
         for(int i=0;i<n;i++)
         {
             count+=abs(mid-nums[i]);
